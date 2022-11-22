@@ -6,18 +6,22 @@ class ArtworksController < ApplicationController
 
   def show
     @artwork = Artwork.find(params[:id])
-    # @booking = Booking.new
+    @booking = Booking.new
   end
 
   def new
-    @artwork = Artwork.new
+    if current_user
+      @artwork = Artwork.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @artwork = Artwork.new(artwork_params)
-    raise
+    @artwork.user = current_user
     if @artwork.save
-      redirect_to artworks_path
+      redirect_to artwork_path(@artwork)
     else
       render :new, status: :unprocessable_entity
     end
