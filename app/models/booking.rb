@@ -1,5 +1,6 @@
 class Booking < ApplicationRecord
-  belongs_to :user, :artwork
+  belongs_to :user
+  belongs_to :artwork
 end
 
 # validates :borrow_date, presence: true
