@@ -15,8 +15,9 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
+    raise
     if @artwork.save
-      redirect_to artwork_path(@artwork)
+      redirect_to artworks_path
     else
       render :new, status: :unprocessable_entity
     end
