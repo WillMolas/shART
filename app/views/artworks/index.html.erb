@@ -1,0 +1,13 @@
+<h1>Gallery</h1>
+
+<% @artworks.each do |artwork| %>
+  <li><%= artwork.name %></li>
+  <img src="">
+  <li><%= artwork.artist %></li>
+  <li><%= artwork.category %></li>
+  <li><%= artwork.description %></li>
+  <li><%= link_to "View Artwork", artwork_path(artwork) %></li>
+
+<% end %>
+
+<%= link_to "Add Artwork to Gallery", new_artwork_path %>
