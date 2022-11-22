@@ -1,1 +1,75 @@
 // Specific CSS for your home-page
+
+.signup-link {
+  // position: sticky;
+  // width: 60px;
+  // height: 19px;
+  // left: 458px;
+  // top: 660px;
+  text-decoration: none;
+  margin-right: 100px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 15pt;
+  text-shadow: 1px 1px 2px black;
+  transition: 0.3s;
+  &:hover {
+    color: #CED0D5;
+  }
+}
+
+.login-link {
+  // position: sticky;
+  // width: 47px;
+  // height: 19px;
+  // left: 854px;
+  // top: 660px;
+  text-decoration: none;
+  margin-left: 100px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 15pt;
+  text-shadow: 1px 1px 2px black;
+  transition: 0.3s;
+  &:hover {
+    color: #CED0D5;
+  }
+}
+
+.gallery-link {
+  // position: sticky;
+  // width: 99px;
+  // height: 19px;
+  // left: 596px;
+  // top: 660px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 16pt;
+  text-shadow: 1px 1px 2px black;
+  transition: 0.3s;
+  &:hover {
+    color: #CED0D5;
+  }
+}
+
+.wrapper {
+  display:flex;
+  width: 100vw;
+  height:100vh;
+  background-image: url(landing-page-background);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
+  justify-content: center;
+
+  .wrapper-text {
+    display: flex;
+    z-index: 100;
+    margin-top: 143px;
+    margin-top: 660px;
+  }
+}
