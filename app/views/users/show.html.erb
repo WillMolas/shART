@@ -1,0 +1,12 @@
+<h1><strong>User porfile of: </strong><%= @user.first_name %> <%= @user.last_name %></h1>
+
+<div>
+  <ul>
+    <% @bookings.each do |booking|%>
+
+    <li><strong>Artwork name: </strong><%= @booking.artwork.name %></li>
+    <li><strong> Booking borrow date: </strong><%= booking.borrow_date%></li>
+    <li><strong> Booking return date: </strong><%= booking.return_date%></li>
+
+    <% end %>
+  </ul>

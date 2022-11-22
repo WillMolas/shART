@@ -1,0 +1,6 @@
+<h1><%= @artwork.name %></h1>
+<%= simple_form_for [@artwork, @booking] do |f| %>
+  <%= f.input :borrow_date %>
+  <%= f.input :return_date %>
+  <%= f.submit %>
+<% end %>
