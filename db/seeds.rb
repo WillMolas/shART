@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Artwork.destroy_all
-user = User.create!(first_name: "Tom", last_name: "Selve", email: "tomselve@gmail.com", password: "123456", password_confirmation: "123456")
+user = User.create!(first_name: "Tom", last_name: "Selv", email: "tomselv@gmail.com", password: "123456", password_confirmation: "123456")
 
 Artwork.create!(name: "Mona Lisa", artist: "Leonardo da Vinci", category: "Renaissance", description: "Average painting, very famous.", location: "Paris", user_id: user.id)
 Artwork.create!(name: "The Scream", artist: "Edvard Munch", category: "Expressionist", description: "Scary face.", location: "Oslo", user_id: user.id)

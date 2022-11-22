@@ -15,7 +15,6 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
-    raise
     if @artwork.save
       redirect_to artwork_path(@artwork)
     else
@@ -26,6 +25,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:name, :artist, :category, :description)
+    params.require(:artwork).permit(:name, :artist, :category, :description, :location, :measurements)
   end
 end
