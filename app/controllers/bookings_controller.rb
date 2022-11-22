@@ -31,8 +31,9 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    artwork = @booking.artwork
     @booking.destroy
-    redirect_to artwork_path(@artwork), status: :see_other
+    redirect_to artwork_path(artwork), status: :see_other
   end
 
   private
