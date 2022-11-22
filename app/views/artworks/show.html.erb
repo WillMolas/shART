@@ -11,6 +11,7 @@
 
   <li><strong>From:</strong><%= booking.borrow_date %></li>
   <li><strong>To:</strong><%= booking.borrow_date %></li>
+  <%= link_to "Edit this booking", edit_booking_path(booking) %>
   <%= link_to "Delete this booking", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 
 <% end %>

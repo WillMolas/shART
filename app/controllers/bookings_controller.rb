@@ -36,6 +36,17 @@ class BookingsController < ApplicationController
     redirect_to artwork_path(artwork), status: :see_other
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    @artwork = @booking.artwork
+    redirect_to artwork_path(@artwork)
+  end
+
   private
 
   def booking_params
