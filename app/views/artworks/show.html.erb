@@ -5,6 +5,8 @@
 <p><%= @artwork.category %></p>
 <p><%= @artwork.description %></p>
 
+<a><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></a>
+
 <% @artwork.bookings.each do |booking| %>
 
   <li><strong>From:</strong><%= booking.borrow_date %></li>
@@ -14,5 +16,6 @@
 <% end %>
 
 <%= link_to "Create a new booking", new_artwork_booking_path(@artwork) %>
+
 
 <%= link_to "Back to Gallery", artworks_path %>
