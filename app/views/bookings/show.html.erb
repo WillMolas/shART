@@ -1,5 +1,14 @@
 <div>
-<h1><%= @booking.artwork.name %></h1>
+<h1><strong><%= @booking.artwork.name %></strong></h1>
 </div>
-<h2><%= @booking.borrow_date %></h2>
-<h2><%= @booking.return_date %></h2>
+<br>
+<h3><strong>Client: </strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></h3>
+<br>
+<ul>
+  <li><strong>From:  </strong><%= @booking.borrow_date %></li>
+  <br>
+  <li><strong>To:  </strong><%= @booking.return_date %></li>
+</ul>
+<br>
+<%= link_to "Edit this booking", edit_booking_path(@booking) %>
+<%= link_to "Delete this booking", booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
