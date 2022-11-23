@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :edit, :update, :destroy]
 
+  resources :artworks do
+    resources :reviews, only: [:new, :create]
+  end
+
+  resources :reviews, only: [:destroy]
+
   resources :users, only: [:show] do
     resources :bookings, only: [:index]
   end

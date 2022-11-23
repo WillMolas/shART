@@ -1,0 +1,7 @@
+<h1>New review for:  <strong><%= @artwork.name %></strong></h1>
+<%= simple_form_for [@artwork, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :review_date %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
