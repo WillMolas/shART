@@ -2,6 +2,8 @@
 <h1><strong><%= @booking.artwork.name %></strong></h1>
 </div>
 <br>
+<%= cl_image_tag @booking.artwork.photo.key, height: 300, width: 400, crop: :fill %>
+<br>
 <h3><strong>Client: </strong><%= @booking.user.first_name %> <%= @booking.user.last_name %></h3>
 <br>
 <ul>
