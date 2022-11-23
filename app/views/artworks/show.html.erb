@@ -1,19 +1,32 @@
-<h1><%= @artwork.name %></h1>
+<div class="show_page">
+  <h1><strong><%= @artwork.name %></strong></h1>
 
-<%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %>
-<p><%= @artwork.artist %></p>
-<p><%= @artwork.category %></p>
-<p><%= @artwork.description %></p>
+  <p class="artwork_img"><%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %></p>
+  <div class="show_card">
+    <p><strong>Artist: </strong><%= @artwork.artist %></p>
+  </div>
+  <div class="show_card">
+    <p><strong>Category: </strong><%= @artwork.category %></p>
+  </div>
+  <div class="show_card">
+    <p><strong>Price: </strong><%= @artwork.price %></p>
+  </div>
+    <div class="show_card">
+    <p><strong>Description: </strong><%= @artwork.description %></p>
+  </div>
+  <button class="buttons"><%= link_to "Back to Gallery", artworks_path %></button>
+  <button class="buttons"><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+  <button class="buttons"><%= link_to "book artwork", new_artwork_booking_path(@artwork) %></button>
 
-<p><%= link_to "Back to Gallery", artworks_path %>       <a><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></a></p>
+</div>
+
 <br>
-
 <% @artwork.bookings.each do |booking| %>
-  <li><strong>Client:</strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
-  <li><strong>From:</strong><%= booking.borrow_date %></li>
-  <li><strong>To:</strong><%= booking.return_date %></li>
-  <%= link_to "Open booking", booking_path(booking) %>
-<% end %>
-<br>
-<br>
-<%= link_to "Create a new booking", new_artwork_booking_path(@artwork) %>
+    <div>
+      <li><strong>Client:</strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
+      <li><strong>From:</strong><%= booking.borrow_date %></li>
+      <li><strong>To:</strong><%= booking.return_date %></li>
+      <button class="booking_info_button"><%= link_to "Open booking", booking_path(booking) %></button>
+    </div>
+    <br>
+  <% end %>
