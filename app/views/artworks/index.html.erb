@@ -1,16 +1,13 @@
-<h1>Gallery</h1>
-
-<%= link_to "Add Artwork to Gallery", new_artwork_path %>
+<div class="header">Gallery</div>
 
 <div class="index-cards">
   <% @artworks.each do |artwork| %>
       <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
-        <%= artwork.name %>
-        <br>
-        <em><%= artwork.artist %></em>
-        <br>
-        <%= link_to "View Artwork", artwork_path(artwork) %>
-        <br>
+        <a href="<%= artwork_path(artwork) %>">
+          <%= artwork.name %>
+          <br>
+          <em><%= artwork.artist %></em>
+        </a>
       </div>
   <% end %>
 </div>
