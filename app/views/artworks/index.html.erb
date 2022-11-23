@@ -2,17 +2,15 @@
 
 <%= link_to "Add Artwork to Gallery", new_artwork_path %>
 
-<div class="cards">
+<div class="index-cards">
   <% @artworks.each do |artwork| %>
-    <div class="cards">
-      <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
-      <%= artwork.name %>
-      <%= artwork.artist %>
-      <%= artwork.category %>
-      <%= artwork.description %>
-      <%= link_to "View Artwork", artwork_path(artwork) %>
-    </div>
+      <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
+        <%= artwork.name %>
+        <br>
+        <em><%= artwork.artist %></em>
+        <br>
+        <%= link_to "View Artwork", artwork_path(artwork) %>
+        <br>
+      </div>
   <% end %>
 </div>
-
-<%# <%= link_to "My bookings", user_bookings %> %>

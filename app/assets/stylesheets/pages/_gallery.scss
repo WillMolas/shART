@@ -1,12 +1,72 @@
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.index-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  height: 700px;
+  margin: 30px;
 }
 
-.card {
-  flex: 0 32%;
-  height: 100px;
-  margin-bottom: 2%;
-  text-align: start;
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .index-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .index-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .index-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .index-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .index-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.index-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 24pt;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+              0 2px 2px rgba(0,0,0,0.12),
+              0 4px 4px rgba(0,0,0,0.12),
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+}
+
+.index-card a {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 24pt;
+  &:hover {
+    color: #CED0D5;
+  }
 }
