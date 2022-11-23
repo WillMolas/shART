@@ -45,14 +45,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  border-radius: 50;
+  border-radius: 5px;
   text-align: center;
   padding: 20px;
-  font-family: 'Raleway', sans-serif;
-  color: white;
-  font-weight: bolder;
-  font-size: 24pt;
-  text-shadow: 2px 2px 2px black;
+  // font-family: 'Raleway', sans-serif;
+  // color: white;
+  // font-weight: bolder;
+  // font-size: 24pt;
+  // text-shadow: 2px 2px 2px black;
   box-shadow: 0 1px 1px rgba(0,0,0,0.12),
               0 2px 2px rgba(0,0,0,0.12),
               0 4px 4px rgba(0,0,0,0.12),
@@ -61,12 +61,21 @@
 }
 
 .index-card a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
   color: white;
   font-weight: bolder;
   font-size: 24pt;
+  text-shadow: 2px 2px 2px black;
+  padding-top: 70px;
   &:hover {
     color: #CED0D5;
   }
+}
+
+body {
+  background-color: rgb(249, 249, 246);
 }
