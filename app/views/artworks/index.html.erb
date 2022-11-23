@@ -1,8 +1,8 @@
 <h1>Gallery</h1>
 
 <% @artworks.each do |artwork| %>
+  <li><%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %></li>
   <li><%= artwork.name %></li>
-  <img src="">
   <li><%= artwork.artist %></li>
   <li><%= artwork.category %></li>
   <li><%= artwork.description %></li>
