@@ -1,15 +1,30 @@
-<h1><strong>User profile of: </strong><%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="user-container">
+  <div>
+  <h1>My Profile</h1>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  </div>
+  <br>
 
-<div>
-  <ul>
-    <% @bookings.each do |booking|%>
-    <% artwork = booking.artwork %>
-    <div>
-      <li><strong>Artwork name: </strong><%= booking.artwork.name %></li>
-      <li><strong> Booking borrow date: </strong><%= booking.borrow_date%></li>
-      <li><strong> Booking return date: </strong><%= booking.return_date%></li>
-      <%= link_to "Open booking", booking_path(booking) %>
-    </div>
-    <br>
-    <% end %>
-  </ul>
+  <h4><% if @bookings.empty? %>
+        <%= "No Upcoming Bookings"%>
+      <% else %>
+        <%= "My Bookings" %>
+      <% end %></h4>
+
+  <div class="bookings">
+    <ul class="user-bookings">
+      <% @bookings.each do |booking|%>
+      <% artwork = booking.artwork %>
+      <div>
+      <br>
+        <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
+        <li><strong>From: </strong><%= booking.borrow_date%></li>
+        <li><strong>To: </strong><%= booking.return_date%></li>
+        <%= link_to "Open booking", booking_path(booking) %>
+      </div>
+      <br>
+      <% end %>
+    </ul>
+  </div>
+</div>
