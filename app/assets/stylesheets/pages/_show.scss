@@ -1,0 +1,47 @@
+.show_page {
+  text-align: center;
+}
+
+.artwork_img {
+  width: 400px;
+  box-shadow: rgb(0, 0, 0);
+  box-shadow: 30px;
+  margin: auto;
+}
+
+a {
+  color: beige;
+  text-decoration: none;
+}
+
+a:hover{
+  color: bisque;
+}
+
+button {
+  text-align: center;
+  text-decoration: none;
+  color: beige;
+  background-color: rgb(100, 85, 85);
+  border-radius: 10px;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+button:hover {
+  background-color: rgb(128, 111, 111);
+}
+
+.show_card {
+  background-color: rgb(100, 85, 85);
+  color: beige;
+  width: 400px;
+  height: 30px;
+  margin: auto;
+  margin-top: 3px;
+  text-align: center;
+  padding: auto;
+}
