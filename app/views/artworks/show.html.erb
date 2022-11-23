@@ -21,6 +21,7 @@
 </div>
 
 <br>
+
 <br>
 
 <div>
@@ -31,13 +32,30 @@
       <% end %></h3>
 
   <br>
-  <% @artwork.bookings.each do |booking| %>
-      <div>
-        <li><strong>Client: </strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
-        <li><strong>From: </strong><%= booking.borrow_date %></li>
-        <li><strong>To: </strong><%= booking.return_date %></li>
-        <button class="booking_info_button"><%= link_to "Open booking", booking_path(booking) %></button>
-      </div>
-      <br>
-    <% end %>
+<% @artwork.bookings.each do |booking| %>
+    <div>
+      <li><strong>Client: </strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
+      <li><strong>From: </strong><%= booking.borrow_date %></li>
+      <li><strong>To: </strong><%= booking.return_date %></li>
+      <button class="booking_info_button"><%= link_to "Open booking", booking_path(booking) %></button>
+    </div>
+    <br>
+<% end %>
+</div>
+<br>
+<div>
+<h2>Reviews</h2>
+<p><button><%= link_to "Add a new review", new_artwork_review_path(@artwork) %></button></p>
+</div>
+<br>
+<% @artwork.reviews.each do |review| %>
+    <div>
+      <li><strong>Client: </strong><%= review.user.first_name %> <%= review.user.last_name %></li>
+      <li><strong>Rating: </strong><%= review.rating %> stars</li>
+      <li><strong>Date: </strong><%= review.review_date %></li>
+      <li><strong>Comment: </strong><%= review.comment %></li>
+      <button><%= link_to "Delete review", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+    </div>
+    <br>
+<% end %>
 </div>
