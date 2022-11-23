@@ -33,14 +33,12 @@
 
 .shared-links {
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .shared-links a {
-  margin-left: 75px;
-  margin-right: 75px;
-  margin-top: 50px;
   font-family: 'Raleway', sans-serif;
   font-size: 12pt;
   font-weight: bolder;

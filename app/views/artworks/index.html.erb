@@ -1,16 +1,18 @@
 <h1>Gallery</h1>
 
-<% @artworks.each do |artwork| %>
-  <li><%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %></li>
-  <li><%= artwork.name %></li>
-  <li><%= artwork.artist %></li>
-  <li><%= artwork.category %></li>
-  <li><%= artwork.description %></li>
-  <li><%= link_to "View Artwork", artwork_path(artwork) %></li>
-
-<% end %>
-
 <%= link_to "Add Artwork to Gallery", new_artwork_path %>
 
+<div class="cards">
+  <% @artworks.each do |artwork| %>
+    <div class="cards">
+      <%= cl_image_tag artwork.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= artwork.name %>
+      <%= artwork.artist %>
+      <%= artwork.category %>
+      <%= artwork.description %>
+      <%= link_to "View Artwork", artwork_path(artwork) %>
+    </div>
+  <% end %>
+</div>
 
 <%# <%= link_to "My bookings", user_bookings %> %>
