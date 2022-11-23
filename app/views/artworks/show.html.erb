@@ -5,17 +5,15 @@
 <p><%= @artwork.category %></p>
 <p><%= @artwork.description %></p>
 
-<a><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></a>
+<p><%= link_to "Back to Gallery", artworks_path %>       <a><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></a></p>
+<br>
 
 <% @artwork.bookings.each do |booking| %>
-
+  <li><strong>Client:</strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
   <li><strong>From:</strong><%= booking.borrow_date %></li>
-  <li><strong>To:</strong><%= booking.borrow_date %></li>
-  <%= link_to "Delete this booking", artwork_path(@artwork), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-
+  <li><strong>To:</strong><%= booking.return_date %></li>
+  <%= link_to "Open booking", booking_path(booking) %>
 <% end %>
-
+<br>
+<br>
 <%= link_to "Create a new booking", new_artwork_booking_path(@artwork) %>
-
-
-<%= link_to "Back to Gallery", artworks_path %>

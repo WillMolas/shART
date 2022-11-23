@@ -3,10 +3,12 @@
 <div>
   <ul>
     <% @bookings.each do |booking|%>
-
-    <li><strong>Artwork name: </strong><%= @booking.artwork.name %></li>
+    <% artwork = booking.artwork %>
+    <div>
+    <li><strong>Artwork name: </strong><%= booking.artwork.name %></li>
     <li><strong> Booking borrow date: </strong><%= booking.borrow_date%></li>
     <li><strong> Booking return date: </strong><%= booking.return_date%></li>
-
+    <br>
+    </div>
     <% end %>
   </ul>

@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  width: 450px;
+  .simple_form {
+    width: 400px;
+  }
+  .form-actions {
+    display: flex;
+    justify-content: center;
+  }
+  .form-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-transform: capitalize;
+  }
+  .btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #1a1423;
+    transition: 0.3s;
+    &:hover {
+      color: #c47335;
+    }
+  }
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.login-button a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12pt;
+  font-weight: bolder;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+  &:hover {
+    color: #c47335;
+  }
+}
