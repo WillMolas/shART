@@ -28,6 +28,16 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def edit
+    @artwork = Artwork.find(params[:id])
+  end
+
+  def update
+    @artwork = Artwork.find(params[:id])
+    @artwork.update(artwork_params)
+    redirect_to artwork_path(@artwork)
+  end
+
   def destroy
     @artwork = Artwork.find(params[:id])
     @artwork.destroy
@@ -37,6 +47,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:name, :artist, :category, :description, :location, :measurements, :photo)
+    params.require(:artwork).permit(:name, :artist, :category, :description, :location, :measurements, :photo, :price)
   end
 end
