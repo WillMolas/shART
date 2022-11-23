@@ -1,14 +1,15 @@
-<h1><strong>User porfile of: </strong><%= @user.first_name %> <%= @user.last_name %></h1>
+<h1><strong>User profile of: </strong><%= @user.first_name %> <%= @user.last_name %></h1>
 
 <div>
   <ul>
     <% @bookings.each do |booking|%>
     <% artwork = booking.artwork %>
     <div>
-    <li><strong>Artwork name: </strong><%= booking.artwork.name %></li>
-    <li><strong> Booking borrow date: </strong><%= booking.borrow_date%></li>
-    <li><strong> Booking return date: </strong><%= booking.return_date%></li>
-    <br>
+      <li><strong>Artwork name: </strong><%= booking.artwork.name %></li>
+      <li><strong> Booking borrow date: </strong><%= booking.borrow_date%></li>
+      <li><strong> Booking return date: </strong><%= booking.return_date%></li>
+      <%= link_to "Open booking", booking_path(booking) %>
     </div>
+    <br>
     <% end %>
   </ul>
