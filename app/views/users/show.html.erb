@@ -1,28 +1,33 @@
 <div class="user-container">
-  <div>
-  <h1>My Profile</h1>
-  <%= @user.first_name %>
-  <%= @user.last_name %>
+  <div class="profile-title">
+    <h1>
+    <strong><%= @user.first_name %></strong>
+    <strong><%= @user.last_name %></strong>
+    </h1>
   </div>
   <br>
 
-  <h4><% if @bookings.empty? %>
+  <h3><% if @bookings.empty? %>
         <%= "No Upcoming Bookings"%>
       <% else %>
-        <%= "My Bookings" %>
-      <% end %></h4>
+        <%= "My Bookings :" %>
+      <% end %></h3>
 
+  <br>
   <div class="bookings">
     <ul class="user-bookings">
       <% @bookings.each do |booking|%>
       <% artwork = booking.artwork %>
-      <div>
-      <br>
-        <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
-        <li><strong>From: </strong><%= booking.borrow_date%></li>
-        <li><strong>To: </strong><%= booking.return_date%></li>
-        <%= link_to "Open booking", booking_path(booking) %>
-      </div>
+          <div class="card-product">
+            <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )"></div>
+            <div class="card-produc-info">
+              <br>
+              <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
+              <li><strong>From: </strong><%= booking.borrow_date%></li>
+              <li><strong>To: </strong><%= booking.return_date%></li>
+              <button class="button_card"><%= link_to "Open booking", booking_path(booking) %></button>
+            </div>
+          </div>
       <br>
       <% end %>
     </ul>
