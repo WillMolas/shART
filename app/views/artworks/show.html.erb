@@ -61,8 +61,8 @@
   <div class="booking-form frame" id="booking-frame">
     <h1><strong>Booking Form</strong></h1>
       <%= simple_form_for [@artwork, @booking] do |f| %>
-      <%= f.input :borrow_date %>
-      <%= f.input :return_date %>
+      <%= f.input :borrow_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
+      <%= f.input :return_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
 
       <%= f.submit "Book Now!", class: "form-button" %>
     <% end %>
