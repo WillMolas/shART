@@ -3,8 +3,9 @@
   <div class="left-container">
     <div class="show_page">
       <h1><strong><%= @artwork.name %></strong></h1>
-
-      <p class="artwork_img"><%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %></p>
+      <div class="show-image">
+        <p class="artwork_img"><%= cl_image_tag @artwork.photo.key, width: 400  %></p>
+      </div>
       <div class="show_card">
         <p><strong>Artist: </strong><%= @artwork.artist %></p>
       </div>
@@ -82,7 +83,10 @@
       <%= simple_form_for [@artwork, @booking] do |f| %>
       <%= f.input :borrow_date %>
       <%= f.input :return_date %>
-      <%= f.submit "Book Now!" %>
+
+      <%= f.submit "Book Now!", class: "form-button" %>
     <% end %>
   </div>
+
+
 </div>
