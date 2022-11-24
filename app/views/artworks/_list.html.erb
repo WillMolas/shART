@@ -1,0 +1,9 @@
+<div data-refresh-list-target="list" class="grid">
+  <div>
+    <% @artworks.each do |artwork| %>
+      <a href="<%= artwork_path(artwork) %>">
+        <img src="<%= cl_image_path artwork.photo.key %>" alt="artworks">
+      </a>
+    <% end %>
+  </div>
+</div>
