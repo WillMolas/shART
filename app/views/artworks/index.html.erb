@@ -4,17 +4,18 @@
       <h1>Gallery</h1>
       <div class="search-box">
         <%= form_with url: artworks_path, method: :get, html: { class: 'd-flex', data: { refresh_list_target: 'form' } } do |f| %>
-          <%= f.text_field :query,
-                                class: "form-control",
-                                placeholder: 'Start search here',
-                                value: params[:query],
-                                data: {
-                                refresh_list_target: 'searchInput',
-                                action: "keyup->refresh-list#update"
-                                }
+          <%= submit_tag "⌕", class: "btn-search" %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "input-search",
+            placeholder: "Search for Artwork",
+            value: params[:query],
+            data: {
+            refresh_list_target: 'searchInput',
+            action: "keyup->refresh-list#update"
+            }
           %>
-          <%= submit_tag "Search", class: "btn-search" %>
-          <% end %>
+        <% end %>
 
       </div>
     </div>
