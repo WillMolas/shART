@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     artwork = @booking.artwork
     @booking.destroy
-    redirect_to artwork_path(artwork), status: :see_other
+    redirect_to user_path, status: :see_other
   end
 
   def edit
@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     @artwork = @booking.artwork
-    redirect_to artwork_path(@artwork)
+    redirect_to user_path
   end
 
   private
