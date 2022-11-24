@@ -1,31 +1,24 @@
-<div class="banner">
-  <div>
-    <h1>Gallery</h1>
-    <div data-controller="refresh-list">
-      <%= form_with url: artworks_path, method: :get, html: { class: 'd-flex', data: { refresh_list_target: 'form' } } do |f| %>
-        <%= f.text_field :query,
-                              class: "form-control",
-                              placeholder: 'Start search here',
-                              value: params[:query],
-                              data: {
-                              refresh_list_target: 'searchInput',
-                              action: "keyup->refresh-list#update"
-                              }
-        %>
-        <%= submit_tag "Search", class: "btn-search" %>
-        <% end %>
-        <%= render 'search', artworks: @artworks %>
+<div data-controller="refresh-list">
+  <div class="banner">
+    <div>
+      <h1>Gallery</h1>
+      <div class="search-box">
+        <%= form_with url: artworks_path, method: :get, html: { class: 'd-flex', data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                                class: "form-control",
+                                placeholder: 'Start search here',
+                                value: params[:query],
+                                data: {
+                                refresh_list_target: 'searchInput',
+                                action: "keyup->refresh-list#update"
+                                }
+          %>
+          <%= submit_tag "Search", class: "btn-search" %>
+          <% end %>
+
+      </div>
     </div>
   </div>
-</div>
 
-<div class="index-cards">
-  <% @artworks.each do |artwork| %>
-      <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
-        <a href="<%= artwork_path(artwork) %>">
-          <%= artwork.name %>
-          <br>
-          <em><%= artwork.artist %></em>
-        </a>
-      </div>
+  <%= render 'search', artworks: @artworks %>
 </div>
