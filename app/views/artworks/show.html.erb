@@ -15,11 +15,14 @@
         <p><strong>Price: </strong><%= @artwork.price %></p>
       </div>
       <div class="show_card">
+        <p><strong>Location: </strong><%= @artwork.location %></p>
+      </div>
+      <div class="show_card">
         <p><strong>Description: </strong><%= @artwork.description %></p>
       </div>
-      <button class="buttons"><%= link_to "Back to Gallery", artworks_path %></button>
-      <button class="buttons"><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-
+      <% if @artwork.user == current_user %>
+        <button class="buttons"><%= link_to "Remove this artwork", artwork_path(@artwork), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+      <% end %>
     </div>
 
     <br>
@@ -52,19 +55,21 @@
             <% else %>
           <%= "Reviews" %>
             <% end %></h4>
-        <button class="review-add-button"><%= link_to "Add a new review", new_artwork_review_path(@artwork) %></button>
+        <button class="review-add-button"><%= link_to "Add a review", new_artwork_review_path(@artwork) %></button>
       </div>
       <% @artwork.reviews.each do |review| %>
         <div class="my-booking">
           <div>
-            <li><%= review.rating %> <i class="fa-solid fa-star"></i></li>
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
             <li><%= review.comment %></li>
-            <li><%= review.user.first_name %> <%= review.user.last_name %>&nbsp&nbsp&nbsp&nbsp<em><%= review.review_date %></em></li>
+            <li><%= review.user.first_name %> <%= review.user.last_name %>&nbsp&nbsp&nbsp&nbsp<em><%= review.created_at.strftime("%B %d %Y, %l:%M%P") %></em></li>
           </div>
           <div class="review-delete-button">
-
+            <% if review.user == current_user %>
               <button id="delete-button"><%= link_to "Delete review", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
-
+            <% end %>
           </div>
         </div>
         <br>
@@ -80,6 +85,4 @@
       <%= f.submit "Book Now!" %>
     <% end %>
   </div>
-
-      <%= @booking.borrow_date %>
 </div>
