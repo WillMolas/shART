@@ -5,6 +5,7 @@ ruby "3.1.2"
 
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
+gem "simple-form-datepicker"
 
 # Add devise gem for user model
 gem "devise"
