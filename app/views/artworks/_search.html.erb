@@ -1,0 +1,7 @@
+<div data-refresh-list-target="list" class="index-cards">
+  <div>
+    <% @artworks.each do |artwork| %>
+      <%= render 'list', artwork: artwork %>
+    <% end %>
+  </div>
+</div>
