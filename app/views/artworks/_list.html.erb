@@ -1,8 +1,8 @@
-<div data-refresh-list-target="list" class="grid">
-  <div>
+<div data-refresh-list-target="list" data-controller="flexmasonry">
+  <div class="grid">
     <% @artworks.each do |artwork| %>
       <a href="<%= artwork_path(artwork) %>">
-        <img src="<%= cl_image_path artwork.photo.key %>" alt="artworks">
+        <img src="<%= cl_image_path artwork.photo.key %>" alt="<%= artwork.name %>" style="height: 95%; width: 95%;">
       </a>
     <% end %>
   </div>
