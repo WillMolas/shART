@@ -1,7 +1,11 @@
 <div data-refresh-list-target="list" class="index-cards">
-  <div>
     <% @artworks.each do |artwork| %>
-      <%= render 'list', artwork: artwork %>
+        <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
+          <a href="<%= artwork_path(artwork) %>">
+            <%= artwork.name %>
+            <br>
+            <em><%= artwork.artist %></em>
+          </a>
+        </div>
     <% end %>
   </div>
-</div>
