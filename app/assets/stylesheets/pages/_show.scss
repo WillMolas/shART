@@ -45,3 +45,64 @@ button:hover {
   text-align: center;
   padding: auto;
 }
+
+.artwork-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.booking-form {
+  text-align: center;
+}
+
+.booking-form h1 {
+  font-size: 24px;
+}
+
+#booking-frame {
+  margin-right: 40px;
+  margin-top: 40px;
+  margin-left: 0px;
+  height: 400px;
+  padding: 10px;
+}
+
+.my-booking {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  background-color: rgba(206, 208, 213, 0.6);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.my-booking li {
+  flex-direction: column;
+}
+
+.review-delete-button {
+  display: flex;
+  align-items: flex-end;
+}
+
+.review-add-button {
+  margin: 0px;
+}
+
+.artwork-reviews {
+  margin-left: 20px;
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#delete-button {
+  margin: 0px;
+}
+
+.review-head {
+  margin-bottom: 16px;;
+}
