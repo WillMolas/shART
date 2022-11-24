@@ -3,14 +3,14 @@ class ArtworksController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = <<~SQL
-        artworks.name @@ :query
-        OR artworks.artist @@ :query
-        OR artworks.category @@ :query
-      SQL
+      sql_query = 'name ILIKE :query OR artist ILIKE :query OR category ILIKE :query'
       @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
     else
       @artworks = Artwork.all
+    end
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'artworks/search', locals: { artworks: @artworks }, formats: [:html] }
     end
   end
 

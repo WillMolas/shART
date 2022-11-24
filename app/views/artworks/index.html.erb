@@ -1,22 +1,16 @@
 <div class="header">Gallery</div>
-<div>
-<%= form_with url: artworks_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an artwork"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-</div>
-<div class="index-cards">
-  <% @artworks.each do |artwork| %>
-      <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
-        <a href="<%= artwork_path(artwork) %>">
-          <%= artwork.name %>
-          <br>
-          <em><%= artwork.artist %></em>
-        </a>
-      </div>
+<div data-controller="refresh-list">
+  <%= form_with url: artworks_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+    <%= f.text_field :query,
+                          class: "form-control",
+                          placeholder: 'Start search here',
+                          value: params[:query],
+                          data: {
+                          refresh_list_target: 'searchInput',
+                          action: "keyup->refresh-list#update"
+                          }
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
+  <%= render 'search', artworks: @artworks %>
 </div>

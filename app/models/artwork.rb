@@ -13,7 +13,7 @@ class Artwork < ApplicationRecord
   pg_search_scope :search_by_name_artist_category,
     against: [ :name, :artist, :category ],
     using: {
-    tsearch: { prefix: true } # <-- now `superman batm` will return something!
-  }
+    tsearch: { prefix: true }
+    }
   # validates :location, presence: true
 end
