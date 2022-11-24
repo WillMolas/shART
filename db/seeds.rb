@@ -31,6 +31,34 @@ artwork5 = Artwork.create!(name: "Number 1", artist: "Jackson Pollock", category
 file = URI.open("https://www.jackson-pollock.org/images/paintings/number-1.jpg")
 artwork5.photo.attach(io: file, filename: "scream.jpg", content_type: "image/jpg")
 
+artwork6 = Artwork.create!(name: "Sunflowers", artist: "Vincent van Gogh", category: "Post-Impressionism", description: "Sunflowers in a vase", location: "London", price: "EUR 700.00", user_id: user.id)
+file = URI.open("https://iiif.micr.io/TZCqF/full/1280,/0/default.jpg")
+artwork6.photo.attach(io: file, filename: "sunflowers.jpg", content_type: "image/jpg")
+
+artwork7 = Artwork.create!(name: "Number 5", artist: "Jackson Pollock", category: "Abstract", description: "More squiggly lines.", location: "New York", price: "EUR 240", user_id: user.id)
+file = URI.open("https://www.jackson-pollock.org/images/paintings/number-5.jpg")
+artwork7.photo.attach(io: file, filename: "number5.jpg", content_type: "image/jpg")
+
+artwork8 = Artwork.create!(name: "Starry Night", artist: "Vincent van Gogh", category: "Post-Impressionism", description: "Night sky with swirls.", location: "New York", price: "EUR 650", user_id: user.id)
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg")
+artwork8.photo.attach(io: file, filename: "starrynight.jpg", content_type: "image/jpg")
+
+artwork9 = Artwork.create!(name: "Van Gogh Self Portrati", artist: "Vincent van Gogh", category: "Post-Impressionism", description: "Painting of myself.", location: "Paris", price: "EUR 640", user_id: user.id)
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg/1200px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg")
+artwork9.photo.attach(io: file, filename: "selfportrait.jpg", content_type: "image/jpg")
+
+artwork10 = Artwork.create!(name: "The Persistence of Memory", artist: "Salvador Dali", category: "Surrealism", description: "Melting clocks.", location: "New York", price: "EUR 980", user_id: user.id)
+file = URI.open("https://mymodernmet.com/wp/wp-content/uploads/2017/06/the-persistence-of-memory-thumbnail.jpg")
+artwork10.photo.attach(io: file, filename: "persistence.jpg", content_type: "image/jpg")
+
+artwork11 = Artwork.create!(name: "Le Reve", artist: "Pablo Picasso", category: "Cubism", description: "Classic Picasso painting.", location: "New York", price: "EUR 1250", user_id: user.id)
+file = URI.open("https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Le-reve-1932.jpg/250px-Le-reve-1932.jpg")
+artwork11.photo.attach(io: file, filename: "lereve.jpg", content_type: "image/jpg")
+
+# artwork10 = Artwork.create!(name: "", artist: "", category: "", description: "", location: "", price: "", user_id: user.id)
+# file = URI.open("")
+# artwork10.photo.attach(io: file, filename: ".jpg", content_type: "image/jpg")
+
 # Artwork.create!(name: "Mona Lisa", artist: "Leonardo da Vinci", category: "Renaissance", description: "Average painting, very famous.", location: "Paris", photo: asset-url("monalisa.jpeg"), user_id: user.id)
 # Artwork.create!(name: "The Scream", artist: "Edvard Munch", category: "Expressionist", description: "Scary face.", location: "Oslo", photo: asset-url("scream.jpeg"), user_id: user.id)
 # Artwork.create!(name: "Campbell's Soup Cans", artist: "Andy Warhol", category: "Modern", description: "Lots of soup.", location: "New York", photo: asset-url("soupcans.jpeg"), user_id: user.id)
