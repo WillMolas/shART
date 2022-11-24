@@ -18,16 +18,19 @@
     <ul class="user-bookings">
       <% @bookings.each do |booking|%>
       <% artwork = booking.artwork %>
-          <div class="card-product">
-            <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )"></div>
-            <div class="card-produc-info">
-              <br>
-              <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
-              <li><strong>From: </strong><%= booking.borrow_date%></li>
-              <li><strong>To: </strong><%= booking.return_date%></li>
-              <button class="button_card"><%= link_to "Open booking", booking_path(booking) %></button>
-            </div>
+        <div class="card-product">
+          <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
           </div>
+          <div class="card-product-info">
+            <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
+            <li><strong>From: </strong><%= booking.borrow_date%></li>
+            <li><strong>To: </strong><%= booking.return_date%></li>
+          </div>
+          <div class="button-card">
+              <button><%= link_to "Edit", edit_booking_path(booking) %></button>
+              <button><%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+          </div>
+        </div>
       <br>
       <% end %>
     </ul>
