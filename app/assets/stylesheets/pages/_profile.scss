@@ -11,15 +11,13 @@ h3 {
   height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  // align-items: center;
   font-family: 'Raleway', sans-serif;
   border-radius: 5px;
 }
 
-.card-product li {
-  justify-content: right;
-}
 
 .card-product .index-card {
   height: 100%;
@@ -33,6 +31,15 @@ h3 {
 }
 
 .card-product button {
-  margin-left: 320px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+  margin-top: 16px;
+  width: 100px
+}
+
+.card-product-info {
+  margin-top: 48px;
+}
+
+.button-card {
+  padding-top: 88px;
 }
