@@ -1,12 +1,15 @@
-<h1>Add New Artwork</h1>
+<div class="form-container">
+  <h1>Add New Artwork</h1>
 
-<%= simple_form_for(@artwork) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :artist %>
-  <%= f.input :category %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :measurements %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit" %>
-<% end %>
+  <%= simple_form_for(@artwork) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :artist %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :measurements %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "shART it!", class: "submit-button" %>
+  <% end %>
+</div>
