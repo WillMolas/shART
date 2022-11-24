@@ -7,6 +7,9 @@ gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "simple-form-datepicker"
 
+# Parallax gem for dynamic scrolling
+gem 'parallax-rails'
+
 # Add devise gem for user model
 gem "devise"
 
