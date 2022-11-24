@@ -1,14 +1,19 @@
-<div class="header">Gallery</div>
-<div>
-<%= form_with url: artworks_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an artwork"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="banner">
+  <div>
+    <h1>Gallery</h1>
+    <div class="search-box">
+      <%= form_with url: artworks_path, method: :get, class: "d-flex" do %>
+        <%= submit_tag "⌕", class: "btn-search" %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "input-search",
+          placeholder: "Search for Artwork"
+        %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 <div class="index-cards">
   <% @artworks.each do |artwork| %>
       <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">

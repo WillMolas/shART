@@ -79,3 +79,18 @@
 body {
   background-color: rgb(249, 249, 246);
 }
+
+.banner {
+  background-image: linear-gradient(to top right, rgba(228,221,221, 0.50) 10%, rgba(0,0,0, 0.80 ) 60%), url(index-banner);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-weight: bolder;
+    font-size: 36pt;
+    text-shadow: 2px 2px 2px black;
+  }
+}
