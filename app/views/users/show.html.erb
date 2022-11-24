@@ -1,38 +1,72 @@
 <div class="user-container">
+
   <div class="profile-title">
-    <h1>
-    <strong><%= @user.first_name %></strong>
-    <strong><%= @user.last_name %></strong>
-    </h1>
+    <img src="https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg">
+    <h2>
+      <strong><%= @user.first_name %> <%= @user.last_name %></strong>
+    </h2>
   </div>
   <br>
 
-  <h3><% if @bookings.empty? %>
-        <%= "No Upcoming Bookings"%>
-      <% else %>
-        <%= "My Bookings :" %>
+  <div class="inventory">
+    <div>
+      <h3><% if @bookings.empty? %>
+            <%= "No Upcoming Bookings"%>
+          <% else %>
+            <%= "My Bookings :" %>
+          <% end %></h3>
+
+      <div class="bookings">
+        <ul class="user-bookings">
+          <% @bookings.each do |booking|%>
+          <% artwork = booking.artwork %>
+            <div class="card-product">
+              <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= cl_image_path artwork.photo.key %> )">
+              </div>
+              <div class="card-product-info">
+                <div>
+                  <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
+                  <li><strong>From: </strong><%= booking.borrow_date%></li>
+                  <li><strong>To: </strong><%= booking.return_date%></li>
+                <div class="button-card">
+                  <button><%= link_to "Edit", edit_booking_path(booking) %></button>
+                  <button><%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+                </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h3 id="artwork-header"><% unless @user.artworks.empty? %>
+        <%= "Empty Gallery"%>
       <% end %></h3>
 
-  <br>
-  <div class="bookings">
-    <ul class="user-bookings">
-      <% @bookings.each do |booking|%>
-      <% artwork = booking.artwork %>
-        <div class="card-product">
-          <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url( <%= cl_image_path artwork.photo.key %> )">
-          </div>
-          <div class="card-product-info">
-            <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
-            <li><strong>From: </strong><%= booking.borrow_date%></li>
-            <li><strong>To: </strong><%= booking.return_date%></li>
-          </div>
-          <div class="button-card">
-              <button><%= link_to "Edit", edit_booking_path(booking) %></button>
-              <button><%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
-          </div>
-        </div>
-      <br>
-      <% end %>
-    </ul>
+        <div class="artworks">
+              <ul class="user-artworks">
+                <% @user.artworks.each do |artwork|%>
+                  <div class="card-product">
+                    <div class="index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <%= cl_image_path artwork.photo.key %> )">
+                    </div>
+                    <div class="card-product-info">
+                      <div>
+                        <li><strong><%= artwork.name %></strong></li>
+                        <br>
+                        <li><em><%= artwork.artist %></em></li>
+                      <div class="button-card">
+                        <button><%= link_to "Edit", edit_artwork_path(artwork) %></button>
+                        <button><%= link_to "Delete", artwork_path(artwork), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                <br>
+                <% end %>
+              </ul>
+            </div>
+    </div>
   </div>
 </div>
