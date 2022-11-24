@@ -29,26 +29,6 @@
     <br>
 
     <br>
-
-    <div>
-      <h3><% if @artwork.bookings.empty? %>
-            <%= ""%>
-          <% else %>
-            <%= "Upcoming Bookings" %>
-          <% end %></h3>
-
-      <% @artwork.bookings.each do |booking| %>
-        <div>
-          <li><strong>Client: </strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
-          <li><strong>From: </strong><%= booking.borrow_date %></li>
-          <li><strong>To: </strong><%= booking.return_date %></li>
-          <button class="booking_info_button"><%= link_to "Open booking", booking_path(booking) %></button>
-        </div>
-        <br>
-      <% end %>
-    </div>
-
-    <br>
     <div class="artwork-reviews">
       <div class="review-head">
         <h4><% if @artwork.reviews.empty? %>
