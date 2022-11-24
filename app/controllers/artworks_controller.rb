@@ -2,7 +2,16 @@ class ArtworksController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @artworks = Artwork.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        artworks.name @@ :query
+        OR artworks.artist @@ :query
+        OR artworks.category @@ :query
+      SQL
+      @artworks = Artwork.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artworks = Artwork.all
+    end
   end
 
   def show
