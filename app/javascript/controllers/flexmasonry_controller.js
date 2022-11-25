@@ -6,6 +6,6 @@ export default class extends Controller {
     FlexMasonry.init('.grid', {
       responsive: false,
       numCols: 4
-  });
+  })
   }
 }

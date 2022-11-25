@@ -1,7 +1,14 @@
-<h1>New review for:  <strong><%= @artwork.name %></strong></h1>
-<%= simple_form_for [@artwork, @review] do |f| %>
-  <%= f.label :rating %>
-  <%= f.select :rating, [0, 1, 2, 3, 4, 5] %>
-  <%= f.input :comment %>
-  <%= f.submit %>
-<% end %>
+<div class="artwork-banner">
+  <h1>New Review:  <strong><%= @artwork.name %></strong></h1>
+</div>
+
+<div class= "review-form">
+  <div class="frame">
+    <%= simple_form_for [@artwork, @review] do |f| %>
+      <%= f.label :rating %>
+      <%= f.select :rating, [0, 1, 2, 3, 4, 5] %>
+      <%= f.input :comment %>
+      <%= f.submit class:"form-button"%>
+    <% end %>
+  </div>
+</div>
