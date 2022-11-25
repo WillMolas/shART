@@ -6,25 +6,30 @@
   </div>
   <br>
 
-  <h4><% if @bookings.empty? %>
+
+  <div class="bookings">
+     <div class="upcoming-bookings">
+      <% if @bookings.empty? %>
         <%= "No Upcoming Bookings"%>
       <% else %>
         <%= "My Bookings" %>
-      <% end %></h4>
-
-  <div class="bookings">
-    <ul class="user-bookings">
+      <% end %>
+   </div>
+    <div class="user-bookings">
       <% @bookings.each do |booking|%>
       <% artwork = booking.artwork %>
       <div>
       <br>
-        <li><strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em></li>
-        <li><strong>From: </strong><%= booking.borrow_date%></li>
-        <li><strong>To: </strong><%= booking.return_date%></li>
+        <strong><%= booking.artwork.name %></strong><em> by <%= booking.artwork.artist %></em>
+        <br>
+        <strong>From: </strong><%= booking.borrow_date%>
+        <br>
+        <strong>To: </strong><%= booking.return_date%>
+        <br>
         <%= link_to "Open booking", booking_path(booking) %>
       </div>
       <br>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>

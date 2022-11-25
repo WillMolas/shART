@@ -55,6 +55,10 @@ artwork11 = Artwork.create!(name: "Le Reve", artist: "Pablo Picasso", category: 
 file = URI.open("https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Le-reve-1932.jpg/250px-Le-reve-1932.jpg")
 artwork11.photo.attach(io: file, filename: "lereve.jpg", content_type: "image/jpg")
 
+artwork12 = Artwork.create(name: "American Gothic", artist: "Grant Wood", category: "Oil Painting", description: "Wood was inspired to paint what is now known as the American Gothic House in Eldon, Iowa, along with the kind of people [he] fancied should live in that house.", location: "The Art Institute of Chicago", price: "EUR 250.00", user: user)
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/600px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg")
+artwork12.photo.attach(io: file, filename: "americangothic.jpg", content_type: "image/jpg")
+
 # artwork10 = Artwork.create!(name: "", artist: "", category: "", description: "", location: "", price: "", user_id: user.id)
 # file = URI.open("")
 # artwork10.photo.attach(io: file, filename: ".jpg", content_type: "image/jpg")

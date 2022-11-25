@@ -10,8 +10,5 @@ application.register("flexmasonry", FlexmasonryController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import ParallaxController from "./parallax_controller"
-application.register("parallax", ParallaxController)
-
 import RefreshListController from "./refresh_list_controller"
 application.register("refresh-list", RefreshListController)
