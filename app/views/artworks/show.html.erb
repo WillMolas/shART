@@ -3,8 +3,9 @@
   <div class="left-container">
     <div class="show_page">
       <h1><strong><%= @artwork.name %></strong></h1>
-
-      <p class="artwork_img"><%= cl_image_tag @artwork.photo.key, height: 300, width: 400, crop: :fill %></p>
+      <div class="show-image">
+        <p class="artwork_img"><%= cl_image_tag @artwork.photo.key, width: 400  %></p>
+      </div>
       <div class="show_card">
         <p><strong>Artist: </strong><%= @artwork.artist %></p>
       </div>
@@ -26,26 +27,6 @@
     </div>
 
     <br>
-
-    <br>
-
-    <div>
-      <h3><% if @artwork.bookings.empty? %>
-            <%= ""%>
-          <% else %>
-            <%= "Upcoming Bookings" %>
-          <% end %></h3>
-
-      <% @artwork.bookings.each do |booking| %>
-        <div>
-          <li><strong>Client: </strong><%= booking.user.first_name %> <%= booking.user.last_name %></li>
-          <li><strong>From: </strong><%= booking.borrow_date %></li>
-          <li><strong>To: </strong><%= booking.return_date %></li>
-          <button class="booking_info_button"><%= link_to "Open booking", booking_path(booking) %></button>
-        </div>
-        <br>
-      <% end %>
-    </div>
 
     <br>
     <div class="artwork-reviews">
@@ -80,9 +61,12 @@
   <div class="booking-form frame" id="booking-frame">
     <h1><strong>Booking Form</strong></h1>
       <%= simple_form_for [@artwork, @booking] do |f| %>
-      <%= f.input :borrow_date %>
-      <%= f.input :return_date %>
-      <%= f.submit "Book Now!" %>
+      <%= f.input :borrow_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
+      <%= f.input :return_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
+
+      <%= f.submit "Book Now!", class: "form-button" %>
     <% end %>
   </div>
+
+
 </div>

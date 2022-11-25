@@ -4,9 +4,10 @@
   <%= f.input :name %>
   <%= f.input :artist %>
   <%= f.input :category %>
+  <%= f.input :price %>
   <%= f.input :description %>
   <%= f.input :location %>
   <%= f.input :measurements %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "form-button" %>
 <% end %>
