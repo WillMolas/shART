@@ -1,21 +1,14 @@
-// background-colour
-// rgba(249, 249, 246, 1)
-
-// colours
-// rgba(10, 9, 8, 1)
-// rgba(34, 51, 59, 1)
-// rgba(198, 172, 143, 1)
-// rgba(94, 80, 63, 1)
-
 .show_page {
   text-align: center;
 }
 
 .artwork_img {
-  box-shadow: rgb(0, 0, 0);
-  box-shadow: 30px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+    0 2px 2px rgba(0,0,0,0.12),
+    0 4px 4px rgba(0,0,0,0.12),
+    0 8px 8px rgba(0,0,0,0.12),
+    0 16px 16px rgba(0,0,0,0.12);
   margin: auto;
-
 }
 
 .show-image {
@@ -32,6 +25,7 @@ a:hover{
 }
 
 button {
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.9);
@@ -42,36 +36,41 @@ button {
   margin-top: 35px;
   padding-left: 20px;
   padding-right: 20px;
+  &:hover {
+    background-color: #C6AC8F;
+  }
 }
 
-button:hover {
-  background-color: rgba(34, 51, 59, 0.8);
-  color: rgba(255, 255, 255, 1);
-}
-
-.show_card {
-  background-color: rgba(34, 51, 59, 0.5);
-  color: rgba(255, 255, 255, 0.9);
-  width: 400px;
-  height: auto;
+.info_card {
   margin: auto;
-  text-align: center;
-  padding: auto;
-  margin-top: 5px;
+  margin-top: 25px;
+  padding: 20px;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: start;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+    0 2px 2px rgba(0,0,0,0.12),
+    0 4px 4px rgba(0,0,0,0.12),
+    0 8px 8px rgba(0,0,0,0.12),
+    0 16px 16px rgba(0,0,0,0.12);
+  width: 350px;
 }
 
 .artwork-container {
   display: grid;
   grid-template-columns: 4fr 2fr;
+  padding-right: 150px;
 }
 
 .booking-form {
   text-align: center;
-
 }
 
 .booking-form h1 {
   font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  color: #1a1423;
+  font-weight: bolder;
 }
 
 #booking-frame {
@@ -133,15 +132,45 @@ button:hover {
 }
 
 .artwork-banner {
+  background-image: linear-gradient(transparent, #FAF9F6), url(gallery-lights);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   height: 160px;
   justify-content: center;
-  background-color: rgba(34, 51, 59, 0.5);
+  background: linear-gradient(0%, 30%, 66%, 100%);
   color: rgba(255, 255, 255, 0.8);
   padding-top: 40px;
   margin-bottom: 16px;
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #1a1423;
+    font-weight: bolder;
+    font-size: 36pt;
+  }
+  em {
+    font-family: 'Raleway', sans-serif;
+    color: #1a1423;
+    font-weight: bolder;
+    font-size: 16pt;
+  }
 }
 
-h4 {
-  color: rgba(34, 51, 59, 0.8);
+.form-button {
+  &:hover {
+    background-color: #C6AC8F;
+  }
+}
+
+.review-head{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h4 {
+    font-family: 'Raleway', sans-serif;
+    color: #1a1423;
+    font-weight: bolder;
+    padding-bottom: 20px;
+  }
 }
