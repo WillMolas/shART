@@ -3,4 +3,4 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-require("./custom/masonry")
+// require("./custom/masonry")
