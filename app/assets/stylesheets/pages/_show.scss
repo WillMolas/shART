@@ -15,6 +15,7 @@
   box-shadow: rgb(0, 0, 0);
   box-shadow: 30px;
   margin: auto;
+
 }
 
 .show-image {
@@ -49,7 +50,7 @@ button:hover {
 }
 
 .show_card {
-  background-color: rgba(34, 51, 59, 0.9);
+  background-color: rgba(34, 51, 59, 0.5);
   color: rgba(255, 255, 255, 0.9);
   width: 400px;
   height: auto;
@@ -75,12 +76,12 @@ button:hover {
 
 #booking-frame {
   margin-right: 40px;
-  margin-top: 40px;
   margin-left: 0px;
+  margin-top: 16px;
   height: 400px;
   padding: 32px 10px 10px 10px;
   background-color: rgba(34, 51, 59, 0.5);
-  color: white;
+  color: rgba(34, 51, 59, 0.8);
 }
 
 .my-booking {
@@ -120,7 +121,7 @@ button:hover {
 }
 
 .review-head {
-  margin-bottom: 16px;;
+  margin-bottom: 16px;
 }
 
 .left-container {
@@ -129,4 +130,18 @@ button:hover {
 
 .left-container h1 {
   margin-bottom: 16px;
+}
+
+.artwork-banner {
+  text-align: center;
+  height: 160px;
+  justify-content: center;
+  background-color: rgba(34, 51, 59, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 40px;
+  margin-bottom: 16px;
+}
+
+h4 {
+  color: rgba(34, 51, 59, 0.8);
 }

@@ -7,7 +7,7 @@ import ContentLoader from 'stimulus-content-loader'
 const application = Application.start()
 application.register('content-loader', ContentLoader)
 
-import { application } from "./application"
+// import { application } from "./application"
 
 import FlexmasonryController from "./flexmasonry_controller"
 application.register("flexmasonry", FlexmasonryController)
