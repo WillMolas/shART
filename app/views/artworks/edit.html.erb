@@ -1,13 +1,37 @@
-<h1>Edit Artwork: <%= @artwork.name %></h1>
+<div class="form-banner">
+  <h1>Edit Your Artwork</h1>
+</div>
 
-<%= simple_form_for(@artwork) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :artist %>
-  <%= f.input :category %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :measurements %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Submit", class: "form-button" %>
-<% end %>
+<div class="form-container">
+  <div class="frame edit-frame">
+    <%= simple_form_for(@artwork) do |f| %>
+      <div class="form-input">
+        <div class="name-input">
+          <%= f.input :name %>
+        </div>
+        <div class="name-input">
+          <%= f.input :artist %>
+        </div>
+      </div>
+      <div class="form-input">
+        <div class="name-input">
+          <%= f.input :category %>
+        </div>
+        <div class="name-input">
+          <%= f.input :price %>
+        </div>
+      </div>
+      <div class="form-input">
+        <div class="name-input">
+          <%= f.input :location %>
+        </div>
+        <div class="name-input">
+          <%= f.input :measurements %>
+        </div>
+      </div>
+      <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
+    <%= f.submit "Submit", class: "form-button" %>
+    <% end %>
+  </div>
+<div>

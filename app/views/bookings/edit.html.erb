@@ -1,9 +1,14 @@
-<div class="form-container">
+<div class="form-banner">
   <h2>Update Booking</h2>
+</div>
+
+<div class="form-container">
+  <div class="frame edit-frame">
   <br>
-  <%= simple_form_for [@artwork, @booking] do |f| %>
-    <%= f.input :borrow_date %>
-    <%= f.input :return_date %>
-    <%= f.submit "Update", class: "form-button" %>
-  <% end %>
+    <%= simple_form_for [@artwork, @booking] do |f| %>
+      <%= f.input :borrow_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
+      <%= f.input :return_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
+      <%= f.submit "Update", class: "form-button" %>
+    <% end %>
+  </div>
 </div>
