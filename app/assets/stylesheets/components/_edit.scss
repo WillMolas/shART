@@ -1,0 +1,14 @@
+.submit-button {
+  background-color: rgba(34, 51, 59, 0.9);
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255, 255, 255, 0.9);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: rgba(34, 51, 59, 0.5);
+}
