@@ -1,7 +1,18 @@
+.edit-frame {
+  width: 50%;
+}
+
 .form-container {
-  width: 60%;
   margin: 0 auto;
   padding-bottom: 32px;
+  text-align: center;
+}
+
+.frame {
+  width: 60%;
+  text-align: left;
+  margin-top: 40px;
+  padding: 16px;
 }
 
 .form-container h1 {
@@ -11,4 +22,28 @@
 
 .form-button {
 margin-top: 16px;
+}
+
+.form-banner {
+  text-align: center;
+  height: 80px;
+  justify-content: center;
+  background-color: rgba(34, 51, 59, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 20px;
+}
+
+.form-input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.name-input {
+  width: 49%;
+  .text {
+    textarea {
+      height: 38px;
+    }
+  }
 }

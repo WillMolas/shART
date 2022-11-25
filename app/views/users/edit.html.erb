@@ -1,6 +1,14 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :avatar, as: :file %>
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="form-banner">
+  <h1>Edit Your Details</h1>
+</div>
+
+<div class="form-container">
+  <div class="frame edit-frame">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :avatar, as: :file %>
+      <%= f.submit "Submit", class: "form-button" %>
+    <% end %>
+  </div>
+</div>
