@@ -1,7 +1,11 @@
 <div class="user-container">
 
   <div class="profile-title">
-    <img src="https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg">
+    <% if current_user.avatar.attached? %>
+          <%= link_to image_tag(url_for(current_user.avatar), class: "avatar-large"), edit_user_path(current_user), class: "nav-link"%>
+          <% else %>
+            <%= link_to image_tag("https://thumbs.dreamstime.com/b/user-icon-vector-male-person-symbol-profile-circle-avatar-sign-user-icon-vector-male-person-symbol-profile-circle-avatar-sign-115922528.jpg"), edit_user_path(current_user), class: "nav-link" %>
+          <% end %>
     <h2>
       <strong><%= @user.first_name %> <%= @user.last_name %></strong>
     </h2>
