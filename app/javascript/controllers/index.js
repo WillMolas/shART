@@ -2,7 +2,13 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+// import { application } from "./application"
+
+import { Application } from '@hotwired/stimulus'
+import ContentLoader from 'stimulus-content-loader'
+
+const application = Application.start()
+application.register('content-loader', ContentLoader)
 
 import DisableButtonController from "./disable_button_controller"
 application.register("disable-button", DisableButtonController)
