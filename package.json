@@ -8,6 +8,7 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "flexmasonry": "^0.2.3",
+    "stimulus-content-loader": "^4.0.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
   },
