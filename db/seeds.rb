@@ -211,6 +211,10 @@ artwork50 = Artwork.create(name: "The Apartment", artist: "Jacob Lawrence", cate
 file = URI.open("https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTgxMDU5MDM3ODA5MzUzODE2/20-greatest-paintings-of-modern-art.webp")
 artwork50.photo.attach(io: file, filename: "apartment.jpg", content_type: "image/jpg")
 
+artwork51 = Artwork.create(name: "American Gothic", artist: "Grant Wood", category: "Oil Painting", description: "Wood was inspired to paint what is now known as the American Gothic House in Eldon, Iowa, along with the kind of people [he] fancied should live in that house.", location: "The Art Institute of Chicago", price: "EUR 250.00", user: user)
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/600px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg")
+artwork51.photo.attach(io: file, filename: "americangothic.jpg", content_type: "image/jpg")
+
 # artwork32 = Artwork.create(name: "", artist: "", category: "Modern", description: "", location: "", price: "", user_id: user.id)
 # file = URI.open("")
 # artwork32.photo.attach(io: file, filename: ".jpg", content_type: "image/jpg")
