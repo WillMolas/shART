@@ -9,7 +9,6 @@
 
 .show_page {
   text-align: center;
-
 }
 
 .artwork_img {
@@ -53,11 +52,11 @@ button:hover {
   background-color: rgba(34, 51, 59, 0.9);
   color: rgba(255, 255, 255, 0.9);
   width: 400px;
-  height: 30px;
+  height: auto;
   margin: auto;
-  margin-top: 3px;
   text-align: center;
   padding: auto;
+  margin-top: 5px;
 }
 
 .artwork-container {
