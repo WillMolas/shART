@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.artwork = @artwork
     if @booking.save
-      redirect_to artwork_path(@artwork)
+      redirect_to artwork_path(@artwork), :notice => "Booked succesfully"
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,6 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    artwork = @booking.artwork
     @booking.destroy
     redirect_to user_path, status: :see_other
   end
