@@ -13,10 +13,8 @@
   <br>
   <div class="inventory">
     <div>
-      <h3><% if @bookings.empty? %>
-            <%= "No Upcoming Bookings"%>
-          <% else %>
-            <%= "My Bookings :" %>
+      <h3><% unless @bookings.empty? %>
+            <%= "My Bookings" %>
           <% end %></h3>
 
       <div class="bookings">
@@ -45,7 +43,7 @@
 
     <div>
       <h3 id="artwork-header"><% unless @user.artworks.empty? %>
-        <%= "My artworks"%>
+        <%= "My Artwork"%>
       <% end %></h3>
 
         <div class="artworks">
