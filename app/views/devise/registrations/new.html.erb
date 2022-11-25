@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="frame">
+  <div class="frame" id="signup-frame">
     <div class="signup-form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
         <%= f.error_notification %>
