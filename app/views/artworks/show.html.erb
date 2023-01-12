@@ -47,7 +47,7 @@
           </div>
           <div class="review-delete-button">
             <% if review.user == current_user %>
-              <button id="delete-button"><%= link_to "Delete review", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+              <button id="delete-button"><%= link_to "Delete", review_path(review), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
             <% end %>
           </div>
         </div>
@@ -61,8 +61,11 @@
       <%= simple_form_for [@artwork, @booking] do |f| %>
       <%= f.input :borrow_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
       <%= f.input :return_date, as: :date, html5: true, required: true, format: 'yyyy-mm-dd' %>
-
-      <%= f.submit "Book Now!", class: "form-button" %>
+      <% if user_signed_in? %>
+        <%= f.submit "Book Now!", class: "form-button" %>
+      <% else %>
+        <%= link_to "Login to book!", new_user_session_path, class: "form-button form-login" %>
+      <% end %>
     <% end %>
   </div>
 
